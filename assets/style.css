@@ -394,6 +394,11 @@ em {
     margin-bottom: 40px; }
   #content table {
     margin-top: 10px; }
+    #content table th {
+      text-align: left;
+      padding: 0 25px 0 25px; }
+    #content table thead th:first-child {
+      padding: 0; }
     #content table td p {
       padding: 0 25px 0 25px; }
   #content pre {
@@ -552,7 +557,8 @@ em {
       font-family: 'ProximaNova-Semibold';
       padding: 12px 13px;
       border: 1px solid #eee;
-      vertical-align: middle; }
+      vertical-align: middle;
+      text-align: left; }
     #content > table td {
       border: 1px solid #eee;
       vertical-align: middle;
@@ -583,6 +589,13 @@ em {
         margin-right: 8px;
         position: relative;
         top: 2px; }
+  #content .field-name {
+    font-weight: bold; }
+  #content .field-entry {
+    margin-bottom: 4rem; }
+  #content .description-wrapper > p {
+    padding-left: 1rem;
+    margin-bottom: 1rem; }
 
 #mobile-header {
   z-index: 3;
@@ -1094,3 +1107,9 @@ pre {
   color: #ae81ff; }
 
 /* Literal.Number.Integer.Long */
+.deprecation-notice {
+  padding-left: 5px;
+  border-left: 2px solid #e8400d;
+  background: #fdf2ec; }
+  .deprecation-notice span {
+    font-weight: bold; }
