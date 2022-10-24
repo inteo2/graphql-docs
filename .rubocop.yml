@@ -1,8 +1,22 @@
 require: rubocop-performance
 
+AllCops:
+  SuggestExtensions: false
+
 Style/StringLiterals:
-  Enabled: true
-  EnforcedStyle: single_quotes
+  Enabled: false
 
 Naming/FileName:
   Enabled: false
+
+Layout/LineLength:
+  Max: 180
+
+Metrics/MethodLength:
+  Max: 32
+  Exclude:
+    - test/**/*.rb
+
+Metrics/AbcSize:
+  Exclude:
+    - test/**/*.rb
