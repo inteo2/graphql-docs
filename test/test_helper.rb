@@ -14,6 +14,7 @@ end
 def output_dir
   File.join(fixtures_dir, 'output')
 end
+
 def clean_up_output
   FileUtils.rm_rf(output_dir)
 end

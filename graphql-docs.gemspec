@@ -11,22 +11,22 @@ Gem::Specification.new do |spec|
   spec.email         = ['brettchalupa@gmail.com']
 
   spec.summary       = 'Easily generate beautiful documentation from your GraphQL schema.'
-  spec.description   = <<-EOF
+  spec.description   = <<-DESC
     Library and CLI for generating a website from a GraphQL API's schema
     definition. With ERB templating support and a plethora of configuration
     options, you can customize the output to your needs. The library easily
     integrates with your Ruby deployment toolchain to ensure the docs for your
     API are up to date.
-  EOF
+  DESC
   spec.homepage      = 'https://github.com/brettchalupa/graphql-docs'
   spec.license       = 'MIT'
   spec.metadata      = {
-    "bug_tracker_uri"   => "https://github.com/brettchalupa/graphql-docs/issues",
-    "changelog_uri"     => "https://github.com/brettchalupa/graphql-docs/blob/main/CHANGELOG.md",
-    "wiki_uri"          => "https://github.com/brettchalupa/graphql-docs/wiki",
+    "bug_tracker_uri" => "https://github.com/brettchalupa/graphql-docs/issues",
+    "changelog_uri" => "https://github.com/brettchalupa/graphql-docs/blob/main/CHANGELOG.md",
+    "wiki_uri" => "https://github.com/brettchalupa/graphql-docs/wiki"
   }
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = 'exe'
@@ -39,11 +39,11 @@ Gem::Specification.new do |spec|
 
   # rendering
   spec.add_dependency 'commonmarker', '>= 0.23.6', '~> 0.23'
+  spec.add_dependency 'dartsass', '~> 1.49'
   spec.add_dependency 'escape_utils', '~> 1.2'
   spec.add_dependency 'extended-markdown-filter', '~> 0.4'
   spec.add_dependency 'gemoji', '~> 3.0'
   spec.add_dependency 'html-pipeline', '>= 2.14.3', '~> 2.14'
-  spec.add_dependency 'dartsass', '~> 1.49'
 
   spec.add_development_dependency 'html-proofer', '~> 3.4'
   spec.add_development_dependency 'minitest', '~> 5.0'

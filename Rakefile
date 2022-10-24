@@ -14,7 +14,7 @@ Rake::TestTask.new(:test) do |t|
   t.test_files = FileList['test/**/*_test.rb']
 end
 
-task default: :test
+task default: %i[rubocop test]
 
 desc 'Invoke HTML-Proofer'
 task :html_proofer do
@@ -57,9 +57,9 @@ namespace :sample do
   desc 'Generate the documentation and run a web server'
   task serve: [:generate] do
     require 'webrick'
-    PORT = "5050"
-    puts "Navigate to http://localhost:#{PORT} to view the sample docs"
-    server = WEBrick::HTTPServer.new Port: PORT
+    port = "5050"
+    puts "Navigate to http://localhost:#{port} to view the sample docs"
+    server = WEBrick::HTTPServer.new Port: port
     server.mount '/', WEBrick::HTTPServlet::FileHandler, 'output'
     trap('INT') { server.stop }
     server.start

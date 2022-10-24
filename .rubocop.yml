@@ -1,7 +1,12 @@
+inherit_from: .rubocop_todo.yml
+
 require: rubocop-performance
 
 AllCops:
   SuggestExtensions: false
+  NewCops: disable
+  Exclude:
+    - bin/*
 
 Style/StringLiterals:
   Enabled: false
@@ -13,7 +18,6 @@ Layout/LineLength:
   Max: 180
 
 Metrics/MethodLength:
-  Max: 32
   Exclude:
     - test/**/*.rb
 

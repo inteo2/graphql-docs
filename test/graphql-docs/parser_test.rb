@@ -54,7 +54,8 @@ class ParserTest < Minitest::Test
     assert_equal 'Marks an element of a GraphQL schema as no longer supported.', preview_directive[:description]
     reason_arg = preview_directive[:arguments].first
     assert_equal 'reason', reason_arg[:name]
-    assert_equal 'Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted in [Markdown](https://daringfireball.net/projects/markdown/).', reason_arg[:description]
+    assert_equal 'Explains why this element was deprecated, usually also including a suggestion for how to access supported similar data. Formatted in [Markdown](https://daringfireball.net/projects/markdown/).',
+                 reason_arg[:description]
   end
 
   def test_mutationless_schemas_do_not_explode

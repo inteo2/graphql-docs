@@ -24,14 +24,14 @@ class CliTest < Minitest::Test
     _out, err = capture_subprocess_io do
       refute cmd("", exception: false)
     end
-    assert_match /schema must be specified/, err
+    assert_match(/schema must be specified/, err)
   end
 
   def test_cli_help
     out, err = capture_subprocess_io do
       assert cmd("--help")
     end
-    assert_match /Usage/, out
+    assert_match(/Usage/, out)
     assert err.empty?
   end
 
@@ -39,8 +39,8 @@ class CliTest < Minitest::Test
     out, err = capture_subprocess_io do
       assert cmd("#{@schema} --verbose")
     end
-    assert_match /Generating site/, out
-    assert_match /Site successfully generated/, out
+    assert_match(/Generating site/, out)
+    assert_match(/Site successfully generated/, out)
     assert err.empty?
   end
 

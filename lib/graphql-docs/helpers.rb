@@ -10,7 +10,7 @@ module GraphQLDocs
 
     def slugify(str)
       slug = str.gsub(SLUGIFY_PRETTY_REGEXP, '-')
-      slug.gsub!(/^\-|\-$/i, '')
+      slug.gsub!(/^-|-$/i, '')
       slug.downcase
     end
 
@@ -69,7 +69,9 @@ module GraphQLDocs
 
     def split_into_metadata_and_contents(contents, parse: true)
       pieces = yaml_split(contents)
-      raise "The file '#{content_filename}' appears to start with a metadata section (three or five dashes at the top) but it does not seem to be in the correct format." if pieces.size < 4
+      if pieces.size < 4
+        raise "The file '#{content_filename}' appears to start with a metadata section (three or five dashes at the top) but it does not seem to be in the correct format."
+      end
 
       # Parse
       begin
