@@ -8,7 +8,9 @@ For fixes and small additions, follow the steps below to get developing and cont
 2. Run the `bin/setup` script to install development dependencies
 3. Work on a branch
 4. Make changes
-5. Ensure tests pass by running `bin/rake`
+5. Ensure tests & lints pass by running `bin/rake`
+  a. Tests are written with MiniTest in the `test` directory, run a given test with: `ruby -Itest test/path/to_test.rb`
+  b. Code is linted with RuboCop, run it on its own with `bin/rubocop`
 6. Commit your changes, this project follows [the Conventional Commits spec](https://www.conventionalcommits.org/en/v1.0.0/)
 7. Open up a pull request
 
