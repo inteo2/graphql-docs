@@ -5,7 +5,9 @@ require 'rake/testtask'
 
 require 'rubocop/rake_task'
 
-RuboCop::RakeTask.new(:rubocop)
+RuboCop::RakeTask.new do |t|
+  t.requires << "rubocop-performance"
+end
 
 Rake::TestTask.new(:test) do |t|
   t.libs << 'test'
